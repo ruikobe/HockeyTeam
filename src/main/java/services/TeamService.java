@@ -8,7 +8,7 @@ public class TeamService {
 
         if(ManagerService.getManagerNubmer() != 1){
             System.out.println("\nNot valid, there must always be only one manager on the team.\n");
-        }else if (activePlayersNumber != 1){
+        }else if (activePlayersNumber != 15){
             System.out.println("\nNot valid, there must always be exactly 15 active players on the team at a time. Currently, there are " + GoalieService.getActiveGoalieNumber() + " active goalies, and " + SkaterService.getActiveSkater() + " active skaters in the team.\n");
         }else if (allPlayersNumber > 20){
             System.out.println("\nNot valid, no more than 20 overall players are allowed on the team at a time.\n");
