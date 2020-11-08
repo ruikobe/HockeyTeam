@@ -32,6 +32,14 @@ public class GoalieService {
         return foundGoalie.get(0);
     }
 
+    public Goalie findGoalieWithMostGames(){
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT e From Goalie e where e.gamesPlayed=(select max(e.gamesPlayed) from Goalie e)");
+        List<Goalie> foundGoalie = query.getResultList();
+        return foundGoalie.get(0);
+    }
+
     public void updatePlayerStatistics(String playerNumber,String status, int newSaves){
 
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");

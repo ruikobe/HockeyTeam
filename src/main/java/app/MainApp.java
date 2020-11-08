@@ -1,10 +1,7 @@
 package app;
 
 import models.*;
-import services.CoachService;
-import services.GoalieService;
-import services.SkaterService;
-import services.TeamService;
+import services.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -35,7 +32,7 @@ public class MainApp {
         /**
          * Update a Player's Statistics after one game
          */
-        skaterService.updatePlayerStatistics("2","active","wing",20,10);
+        //skaterService.updatePlayerStatistics("2","active","wing",20,10);
 
         /**
          * Remove a player
@@ -60,6 +57,8 @@ public class MainApp {
         CoachService coachService = new CoachService();
         coachService.updateCoachLevel("Bob",1);
 
+        PlayerService playerService = new PlayerService();
+        System.out.println("MVP: " + playerService.findPlayerWithMostGames().getName());
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
