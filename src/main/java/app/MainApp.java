@@ -18,25 +18,18 @@ public class MainApp {
          * Skater services
          */
         SkaterService skaterService = new SkaterService();
-        /**
-         * Add a new player (skater)
-         */
+
+        /** Add a new player (skater) */
         Skater newPlayer = new Skater("3", "James", 15, "injured", "wing",0,0,0,0.0,0.0);
         //System.out.println("The new player "+ skaterService.addSkater(newPlayer) + " has been added to the team as a skater.\n");
 
-        /**
-         * Find a player with the most goals
-         */
+        /** Find a player with the most goals */
         System.out.println("The skater with the most goals for the entire season is " + skaterService.findSkaterWithMostGoals().getName()+ ".\n" + "His total goals are " + skaterService.findSkaterWithMostGoals().getTotalGoals() + ".\n");
 
-        /**
-         * Update a Player's Statistics after one game
-         */
+        /** Update a Player's Statistics after one game */
         //skaterService.updatePlayerStatistics("2","active","wing",20,10);
 
-        /**
-         * Remove a player
-         */
+        /** Remove a player */
         //skaterService.removePlayer("3");
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
