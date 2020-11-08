@@ -47,13 +47,14 @@ public class SkaterService {
         entityManager.getTransaction().begin();
 
         Skater foundSkater = entityManager.find(Skater.class, playerNumber);
-        int totalGamesPlayed = foundSkater.getGamesPlayed() + 1;
-        int totalGoals = foundSkater.getTotalGoals() + newGoals;
-        int totalAssists = foundSkater.getTotalAssists() + newAssists;
-        double goalsPerGame = totalGoals / totalGamesPlayed;
-        double assistsPerGame = totalAssists / totalGamesPlayed;
 
         if (foundSkater != null){
+            int totalGamesPlayed = foundSkater.getGamesPlayed() + 1;
+            int totalGoals = foundSkater.getTotalGoals() + newGoals;
+            int totalAssists = foundSkater.getTotalAssists() + newAssists;
+            double goalsPerGame = totalGoals / totalGamesPlayed;
+            double assistsPerGame = totalAssists / totalGamesPlayed;
+
             foundSkater.setStatus(status);
             foundSkater.setPosition(position);
             foundSkater.setGamesPlayed(totalGamesPlayed);
@@ -72,6 +73,7 @@ public class SkaterService {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
+
         Skater foundSkater = entityManager.find(Skater.class, playerNumber);
         if (foundSkater != null){
             entityManager.remove(foundSkater);

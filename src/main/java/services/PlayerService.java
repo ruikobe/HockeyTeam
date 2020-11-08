@@ -8,7 +8,7 @@ public class PlayerService {
 
     public Player findPlayerWithMostGames(){
 
-        if(skaterService.findSkaterWithMostGames().getGamesPlayed() > goalieService.findGoalieWithMostGames().getGamesPlayed()){
+        if(skaterService.findSkaterWithMostGames().getGamesPlayed() >= goalieService.findGoalieWithMostGames().getGamesPlayed()){
             return skaterService.findSkaterWithMostGames();
         }else
             return goalieService.findGoalieWithMostGames();

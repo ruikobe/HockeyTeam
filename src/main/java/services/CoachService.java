@@ -33,7 +33,6 @@ public class CoachService {
         }else {
             System.out.println("The coach " + name + "'s level has been updated.\n");
         }
-
         entityManager.getTransaction().commit();
     }
 
@@ -48,7 +47,6 @@ public class CoachService {
         }else {
             System.out.println("The coach " + name + " does not exist.\n");
         }
-
         entityManager.getTransaction().commit();
     }
 

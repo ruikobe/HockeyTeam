@@ -68,6 +68,7 @@ public class GoalieService {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
+
         Goalie foundGoalie = entityManager.find(Goalie.class, playerNumber);
         if (foundGoalie != null){
             entityManager.remove(foundGoalie);
