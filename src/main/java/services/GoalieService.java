@@ -47,11 +47,12 @@ public class GoalieService {
         entityManager.getTransaction().begin();
 
         Goalie foundGoalie = entityManager.find(Goalie.class, playerNumber);
-        int totalGamesPlayed = foundGoalie.getGamesPlayed() + 1;
-        int totalSaves = foundGoalie.getTotalSaves() + newSaves;
-        double savesPerGame = totalSaves / totalGamesPlayed;
 
         if (foundGoalie != null){
+            int totalGamesPlayed = foundGoalie.getGamesPlayed() + 1;
+            int totalSaves = foundGoalie.getTotalSaves() + newSaves;
+            double savesPerGame = totalSaves / totalGamesPlayed;
+
             foundGoalie.setStatus(status);
             foundGoalie.setGamesPlayed(totalGamesPlayed);
             foundGoalie.setTotalSaves(totalSaves);

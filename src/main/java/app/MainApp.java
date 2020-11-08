@@ -46,7 +46,7 @@ public class MainApp {
         GoalieService goalieService = new GoalieService();
         Goalie newPlayer2 = new Goalie("5","Hello",15,"active",0,0,0.0);
         //System.out.println("The new player "+ goalieService.addGoalie(newPlayer2) + " has been added to the team as a goalie.\n");
-        goalieService.updatePlayerStatistics("5","injured",1);
+        goalieService.updatePlayerStatistics("6","injured",1);
         System.out.println("The goalie with the fewest saves for the entire season is " + goalieService.findGoalieWithFewestSaves().getName()+ ".\n" + "His total number of saves is " + goalieService.findGoalieWithFewestSaves().getTotalSaves() + ".\n");
 
 
