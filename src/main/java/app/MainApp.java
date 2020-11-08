@@ -28,9 +28,9 @@ public class MainApp {
         //System.out.println("The new player "+ skaterService.addSkater(newPlayer) + " has been added to the team as a skater.\n");
 
         /**
-         * Find a player by the jersey number
+         * Find a player with the most goals
          */
-        System.out.println(skaterService.findPlayer("2").toString()+"\n");
+        System.out.println("The skater with the most goals for the entire season is " + skaterService.findSkaterWithMostGoals().getName()+ ".\n" + "His total goals are " + skaterService.findSkaterWithMostGoals().getTotalGoals() + ".\n");
 
         /**
          * Update a Player's Statistics after one game
@@ -50,6 +50,8 @@ public class MainApp {
         Goalie newPlayer2 = new Goalie("5","Hello",15,"active",0,0,0.0);
         //System.out.println("The new player "+ goalieService.addGoalie(newPlayer2) + " has been added to the team as a goalie.\n");
         goalieService.updatePlayerStatistics("5","injured",1);
+        System.out.println("The goalie with the fewest saves for the entire season is " + goalieService.findGoalieWithFewestSaves().getName()+ ".\n" + "His total number of saves is " + goalieService.findGoalieWithFewestSaves().getTotalSaves() + ".\n");
+
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /**

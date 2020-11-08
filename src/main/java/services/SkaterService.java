@@ -24,11 +24,12 @@ public class SkaterService {
         return newSkater.getName();
     }
 
-    public Skater findPlayer(String playerNumber){
+    public Skater findSkaterWithMostGoals(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Skater foundSkater = entityManager.find(Skater.class, playerNumber);
-        return foundSkater;
+        Query query = entityManager.createQuery("SELECT e From Skater e where e.totalGoals=(select max(e.totalGoals) from Skater e)");
+        List<Skater> foundSkater = query.getResultList();
+        return foundSkater.get(0);
     }
 
     public void updatePlayerStatistics(String playerNumber,String status, String position, int newGoals, int newAssists){

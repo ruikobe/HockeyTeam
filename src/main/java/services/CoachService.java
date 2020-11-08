@@ -1,8 +1,6 @@
 package services;
 
 import models.Coach;
-import models.Manager;
-import models.Skater;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -52,8 +50,6 @@ public class CoachService {
         }
         entityManager.getTransaction().commit();
     }
-
-
 
     public static int getHeadCoachNumber(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");

@@ -24,11 +24,12 @@ public class GoalieService {
         return newGoalie.getName();
     }
 
-    public Goalie findPlayer(String playerNumber){
+    public Goalie findGoalieWithFewestSaves(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Goalie foundGoalie = entityManager.find(Goalie.class, playerNumber);
-        return foundGoalie;
+        Query query = entityManager.createQuery("SELECT e From Goalie e where e.totalSaves=(select min(e.totalSaves) from Goalie e)");
+        List<Goalie> foundGoalie = query.getResultList();
+        return foundGoalie.get(0);
     }
 
     public void updatePlayerStatistics(String playerNumber,String status, int newSaves){
