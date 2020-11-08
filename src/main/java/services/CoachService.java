@@ -28,7 +28,6 @@ public class CoachService {
         entityManager.getTransaction().begin();
 
         Coach foundCoach = entityManager.find(Coach.class, name);
-
         if (foundCoach != null){
             foundCoach.setLevel(level);
         }else {
@@ -42,12 +41,14 @@ public class CoachService {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
+
         Coach foundCoach = entityManager.find(Coach.class, name);
         if (foundCoach != null){
             entityManager.remove(foundCoach);
         }else {
             System.out.println("The coach " + name + " does not exist.\n");
         }
+
         entityManager.getTransaction().commit();
     }
 
