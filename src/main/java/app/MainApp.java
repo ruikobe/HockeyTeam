@@ -58,7 +58,7 @@ public class MainApp {
         coachService.updateCoachLevel("Bob",1);
 
         PlayerService playerService = new PlayerService();
-        System.out.println("MVP: " + playerService.findPlayerWithMostGames().getName());
+        System.out.println("The player (including skater and goalie) with the most games for the entire season is " + playerService.findPlayerWithMostGames().getName() + ".\n");
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
