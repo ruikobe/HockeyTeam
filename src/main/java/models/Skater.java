@@ -7,10 +7,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table
-//@NamedQuery(query = "SELECT e FROM Skater WHERE e.playerNumber= :playernumber", name="Find Player By PlayerNumber")
 public class Skater extends Player{
     @Id
- //   @column(name="playerNumber")
     private String playerNumber;
     private String name;
     private int age;
