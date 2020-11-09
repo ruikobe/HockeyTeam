@@ -9,6 +9,11 @@ import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ruizhu
+ * @className: MainApp
+ * @description: Main Entry for this project
+ */
 public class MainApp {
     public static void main(String[] args) {
 

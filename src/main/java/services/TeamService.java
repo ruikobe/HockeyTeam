@@ -1,7 +1,18 @@
 package services;
 
+/**
+ * @author ruizhu
+ * @className: TeamService
+ * @description: Validate/check the team roster is valid
+ */
 public class TeamService {
 
+    /**
+     * @author ruizhu
+     * @methodsName: teamValid
+     * @description: Validate/check the team roster is valid
+     * @return: void
+     */
     public void teamValid(){
         int allPlayersNumber = GoalieService.getAllGoalieNumber() + SkaterService.getAllSkater();
         int activePlayersNumber = GoalieService.getActiveGoalieNumber() + SkaterService.getActiveSkater();

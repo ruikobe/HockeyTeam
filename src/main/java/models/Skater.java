@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- Skater Entity
+ * @author ruizhu
+ * @className: Skater
+ * @description: Skater Entity, subclass of Player
  */
 @Entity
 @Table
@@ -23,12 +25,23 @@ public class Skater extends Player{
     private double goalsPerGame;
     private double assistsPerGame;
 
+    /**
+     * @description: One to Many Relationship between tables Skater and PlayerHistory
+     */
     @OneToMany(targetEntity = PlayerHistory.class)
     private List<PlayerHistory> playerHistoryList = new ArrayList<>();
 
+    /**
+     * @description: constructor
+     * @param: []
+     */
     public Skater() {
     }
 
+    /**
+     * @description: constructor
+     * @param: [playerNumber, name, age, status, position, gamesPlayed, totalGoals, totalAssists, goalsPerGame, assistsPerGame, playerHistoryList]
+     */
     public Skater(String playerNumber, String name, int age, String status, String position, int gamesPlayed, int totalGoals, int totalAssists, double goalsPerGame, double assistsPerGame, List<PlayerHistory> playerHistoryList) {
         this.playerNumber = playerNumber;
         this.name = name;

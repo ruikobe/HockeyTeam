@@ -2,6 +2,11 @@ package models;
 
 import javax.persistence.*;
 
+/**
+ * @author ruizhu
+ * @className: PlayerHistory
+ * @description: PlayerHistory Entity, track the game history of each player
+ */
 @Entity
 @Table
 public class PlayerHistory {
@@ -14,9 +19,17 @@ public class PlayerHistory {
     private int assists;
     private int saves;
 
+    /**
+     * @description: constructor
+     * @param: []
+     */
     public PlayerHistory() {
     }
 
+    /**
+     * @description: constructor
+     * @param: [playerHistoryId, playerNumber, gameNumber, data, goals, assists, saves]
+     */
     public PlayerHistory(int playerHistoryId, String playerNumber, int gameNumber, String date, int goals, int assists, int saves) {
         this.playerHistoryId= playerHistoryId;
         this.playerNumber = playerNumber;

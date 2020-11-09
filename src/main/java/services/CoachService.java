@@ -9,6 +9,11 @@ import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ruizhu
+ * @className: CoachService
+ * @description: Implement Add/update/remove/count methods for coaches
+ */
 public class CoachService {
     private static List<Coach> headCoaches = new ArrayList<>();
     private static List<Coach> assistantCoaches = new ArrayList<>();

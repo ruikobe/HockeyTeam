@@ -1,8 +1,10 @@
 package models;
 
-import javax.persistence.OneToMany;
-import java.util.List;
-
+/**
+ * @author ruizhu
+ * @className: Player
+ * @description: Player Entity, father class for all players
+ */
 public class Player {
 
     private String playerNumber;
@@ -11,9 +13,17 @@ public class Player {
     private String status;
     private int gamesPlayed;
 
+    /**
+     * @description: constructor
+     * @param: []
+     */
     public Player() {
     }
 
+    /**
+     * @description: constructor
+     * @param: [playerNumber, name, age, status, gamesPlayed]
+     */
     public Player(String playerNumber, String name, int age, String status, int gamesPlayed) {
         this.playerNumber = playerNumber;
         this.name = name;

@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author ruizhu
+ * @className: Coach
+ * @description: Coach Entity
+ */
 @Entity
 @Table
 public class Coach {
@@ -13,9 +18,17 @@ public class Coach {
     private int age;
     private int level;
 
+    /**
+     * @description: constructor
+     * @param: []
+     */
     public Coach() {
     }
 
+    /**
+     * @description: constructor
+     * @param: [name, age, level]
+     */
     public Coach(String name, int age, int level) {
         this.name = name;
         this.age = age;

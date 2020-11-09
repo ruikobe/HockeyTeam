@@ -1,7 +1,6 @@
 package services;
 
 import models.Manager;
-import models.Skater;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,6 +9,11 @@ import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ruizhu
+ * @className: ManagerService
+ * @description: Implement Add/remove/count methods for managers
+ */
 public class ManagerService {
     private static List<Manager> managers = new ArrayList<>();
 

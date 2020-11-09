@@ -9,6 +9,11 @@ import javax.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author ruizhu
+ * @className: SkaterService
+ * @description: Implement Add/find/update/remove/count methods for skaters
+ */
 public class SkaterService {
     private static List<Skater> allSkaters = new ArrayList<>();
     private static List<Skater> activeSkaters = new ArrayList<>();
@@ -32,25 +37,7 @@ public class SkaterService {
         return foundSkater.get(0);
     }
 
-    // Method overloading
-    public Skater findSkaterWithMostGoals(int startGameNumber, int endGameNumber){
-        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Query query = entityManager.createQuery("SELECT e From Skater e where e.totalGoals=(select max(e.totalGoals) from Skater e)");
-        List<Skater> foundSkater = query.getResultList();
-        return foundSkater.get(0);
-    }
-
     public Skater findSkaterWithMostGames(){
-        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        Query query = entityManager.createQuery("SELECT e From Skater e where e.gamesPlayed=(select max(e.gamesPlayed) from Skater e)");
-        List<Skater> foundSkater = query.getResultList();
-        return foundSkater.get(0);
-    }
-
-    // Method overloading
-    public Skater findSkaterWithMostGames(int startGameNumber, int endGameNumber){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         Query query = entityManager.createQuery("SELECT e From Skater e where e.gamesPlayed=(select max(e.gamesPlayed) from Skater e)");

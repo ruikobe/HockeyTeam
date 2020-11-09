@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * @author ruizhu
+ * @className: Manager
+ * @description: Manager Entity
+ */
 @Entity
 @Table
 public class Manager {
@@ -11,9 +16,17 @@ public class Manager {
     private String name;
     private int age;
 
+    /**
+     * @description: constructor
+     * @param: []
+     */
     public Manager() {
     }
 
+    /**
+     * @description: constructor
+     * @param: [name, age]
+     */
     public Manager(String name, int age) {
         this.name = name;
         this.age = age;
