@@ -21,19 +21,20 @@ public class MainApp {
          */
         SkaterService skaterService = new SkaterService();
 
-        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        entityManager.getTransaction().begin();
-        PlayerHistory playerHistory1 = new PlayerHistory(1,"9",1,"2020-05-11",30,10,0);
-        entityManager.persist(playerHistory1);
-        entityManager.getTransaction().commit();
-
-        List<PlayerHistory> playerHistoryList = new ArrayList<>();
-        playerHistoryList.add(playerHistory1);
-
         /** Add a new player (skater) */
-        Skater newPlayer = new Skater("9", "James", 15, "injured", "wing",0,0,0,0.0,0.0,playerHistoryList);
-        System.out.println("The new player "+ skaterService.addSkater(newPlayer) + " has been added to the team as a skater.\n");
+//        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+//        EntityManager entityManager = entityManagerFactory.createEntityManager();
+//        entityManager.getTransaction().begin();
+//        PlayerHistory playerHistory1 = new PlayerHistory(1,"9",1,"2020-05-11",30,10,0);
+//        entityManager.persist(playerHistory1);
+//        entityManager.getTransaction().commit();
+//
+//        List<PlayerHistory> playerHistoryList = new ArrayList<>();
+//        playerHistoryList.add(playerHistory1);
+//
+//
+//        Skater newPlayer = new Skater("9", "James", 15, "injured", "wing",0,0,0,0.0,0.0,playerHistoryList);
+//        System.out.println("The new player "+ skaterService.addSkater(newPlayer) + " has been added to the team as a skater.\n");
 
         /** Find a player with the most goals */
         System.out.println("The skater with the most goals for the entire season is " + skaterService.findSkaterWithMostGoals().getName()+ ".\n" + "His total goals are " + skaterService.findSkaterWithMostGoals().getTotalGoals() + ".\n");
