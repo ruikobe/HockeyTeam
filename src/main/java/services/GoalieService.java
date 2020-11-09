@@ -33,7 +33,25 @@ public class GoalieService {
         return foundGoalie.get(0);
     }
 
+    // Method overloading
+    public Goalie findGoalieWithFewestSaves(int startGameNumber, int endGameNumber){
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT e From Goalie e where e.totalSaves=(select min(e.totalSaves) from Goalie e)");
+        List<Goalie> foundGoalie = query.getResultList();
+        return foundGoalie.get(0);
+    }
+
     public Goalie findGoalieWithMostGames(){
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT e From Goalie e where e.gamesPlayed=(select max(e.gamesPlayed) from Goalie e)");
+        List<Goalie> foundGoalie = query.getResultList();
+        return foundGoalie.get(0);
+    }
+
+    // Method overloading
+    public Goalie findGoalieWithMostGames(int startGameNumber, int endGameNumber){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         Query query = entityManager.createQuery("SELECT e From Goalie e where e.gamesPlayed=(select max(e.gamesPlayed) from Goalie e)");

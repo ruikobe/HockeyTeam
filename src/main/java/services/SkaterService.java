@@ -32,7 +32,25 @@ public class SkaterService {
         return foundSkater.get(0);
     }
 
+    // Method overloading
+    public Skater findSkaterWithMostGoals(int startGameNumber, int endGameNumber){
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT e From Skater e where e.totalGoals=(select max(e.totalGoals) from Skater e)");
+        List<Skater> foundSkater = query.getResultList();
+        return foundSkater.get(0);
+    }
+
     public Skater findSkaterWithMostGames(){
+        EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT e From Skater e where e.gamesPlayed=(select max(e.gamesPlayed) from Skater e)");
+        List<Skater> foundSkater = query.getResultList();
+        return foundSkater.get(0);
+    }
+
+    // Method overloading
+    public Skater findSkaterWithMostGames(int startGameNumber, int endGameNumber){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         Query query = entityManager.createQuery("SELECT e From Skater e where e.gamesPlayed=(select max(e.gamesPlayed) from Skater e)");
