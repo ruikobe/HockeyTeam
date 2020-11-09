@@ -69,7 +69,7 @@ public class MainApp {
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /**
-         * Initialize Database
+         * Initialize Database: insert some sample data into the database. If tables already exists, just comment out the following codes.
          */
 //        EntityManagerFactory factory  = Persistence.createEntityManagerFactory("default");
 //        EntityManager manager = factory.createEntityManager();
