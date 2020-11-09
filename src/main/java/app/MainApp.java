@@ -87,8 +87,6 @@ public class MainApp {
 //        manager.persist(coach1);
 //        Goalie player1 = new Goalie("1", "Mike", 15, "active",0, 0,0.0);
 //        manager.persist(player1);
-//        Skater player2 = new Skater("2", "Miller", 15, "injured", "wing",0,0,0,0.0,0.0);
-//        manager.persist(player2);
 //        manager.getTransaction().commit();
 //        manager.close();
 //        factory.close();
