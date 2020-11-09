@@ -15,6 +15,7 @@ public class Goalie extends Player{
     private int age;
     private String status;
     private int gamesPlayed;
+
     private int totalSaves;
     private double savesPerGame;
 

@@ -6,11 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CoachService {
-    private static List<Coach> headCoaches;
-    private static List<Coach> assistantCoaches;
+    private static List<Coach> headCoaches = new ArrayList<>();
+    private static List<Coach> assistantCoaches = new ArrayList<>();
 
     public String addCoach(Coach newCoach){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
@@ -59,7 +60,6 @@ public class CoachService {
         headCoaches = headCoachQuery.getResultList();
 
         return headCoaches.size();
-
     }
 
     public static int getAssistantCoachNumber(){

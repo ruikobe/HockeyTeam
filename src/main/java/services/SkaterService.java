@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SkaterService {
     private static List<Skater> allSkaters = new ArrayList<>();
-    private static List<Skater> activeSkaters;
+    private static List<Skater> activeSkaters = new ArrayList<>();
 
     public String addSkater(Skater newSkater){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");

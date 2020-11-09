@@ -9,6 +9,7 @@
         <class>models.Manager</class>
         <class>models.Skater</class>
         <class>models.Goalie</class>
+        <class>models.PlayerHistory</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hockey?serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="root"/>

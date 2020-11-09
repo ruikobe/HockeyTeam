@@ -1,5 +1,8 @@
 package models;
 
+import javax.persistence.OneToMany;
+import java.util.List;
+
 public class Player {
 
     private String playerNumber;
@@ -7,6 +10,8 @@ public class Player {
     private int age;
     private String status;
     private int gamesPlayed;
+    @OneToMany
+    private List<PlayerHistory> playerHistoryList;
 
     public Player() {
     }

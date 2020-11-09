@@ -7,11 +7,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GoalieService {
-    private static List<Goalie> allGoalies;
-    private static List<Goalie> activeGoalies;
+    private static List<Goalie> allGoalies = new ArrayList<>();
+    private static List<Goalie> activeGoalies = new ArrayList<>();
 
     public String addGoalie(Goalie newGoalie){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");

@@ -7,10 +7,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ManagerService {
-    private static List<Manager> managers;
+    private static List<Manager> managers = new ArrayList<>();
 
     public String addManager(Manager newManager){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");

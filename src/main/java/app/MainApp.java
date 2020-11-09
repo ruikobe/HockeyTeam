@@ -27,7 +27,7 @@ public class MainApp {
         System.out.println("The skater with the most goals for the entire season is " + skaterService.findSkaterWithMostGoals().getName()+ ".\n" + "His total goals are " + skaterService.findSkaterWithMostGoals().getTotalGoals() + ".\n");
 
         /** Update a Player's Statistics after one game */
-        //skaterService.updatePlayerStatistics("2","active","wing",20,10);
+        skaterService.updatePlayerStatistics("2","active","wing",20,10);
 
         /** Remove a player */
         //skaterService.removePlayer("3");
