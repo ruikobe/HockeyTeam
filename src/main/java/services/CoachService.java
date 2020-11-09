@@ -18,6 +18,11 @@ public class CoachService {
     private static List<Coach> headCoaches = new ArrayList<>();
     private static List<Coach> assistantCoaches = new ArrayList<>();
 
+    /**
+     * @methodsName: addCoach
+     * @description: add a coach to the team, and return the name of the new coach
+     * @return: String
+     */
     public String addCoach(Coach newCoach){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -27,6 +32,11 @@ public class CoachService {
         return newCoach.getName();
     }
 
+    /**
+     * @methodsName: updateCoachLevel
+     * @description: update the level of the coach with the "name"
+     * @return: void
+     */
     public void updateCoachLevel(String name, int level){
 
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
@@ -42,6 +52,11 @@ public class CoachService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: removeCoach
+     * @description: remove the coach with "name"
+     * @return: void
+     */
     public void removeCoach(String name){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -56,6 +71,11 @@ public class CoachService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: getHeadCoachNumber
+     * @description: count the number of head coaches
+     * @return: int
+     */
     public static int getHeadCoachNumber(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -67,6 +87,11 @@ public class CoachService {
         return headCoaches.size();
     }
 
+    /**
+     * @methodsName: getAssistantCoachNumber
+     * @description: count the number of assistant coaches
+     * @return: int
+     */
     public static int getAssistantCoachNumber(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

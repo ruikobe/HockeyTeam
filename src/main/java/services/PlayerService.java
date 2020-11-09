@@ -12,7 +12,6 @@ public class PlayerService {
     GoalieService goalieService = new GoalieService();
 
     /**
-     * @author ruizhu
      * @methodsName: findPlayerWithMostGames
      * @description: Find the overall player with the max number of played games
      * @return: Player

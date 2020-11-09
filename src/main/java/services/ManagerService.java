@@ -17,6 +17,11 @@ import java.util.List;
 public class ManagerService {
     private static List<Manager> managers = new ArrayList<>();
 
+    /**
+     * @methodsName: addManager
+     * @description: add a manager to the team, and return the name of the new manager
+     * @return: String
+     */
     public String addManager(Manager newManager){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -26,6 +31,11 @@ public class ManagerService {
         return newManager.getName();
     }
 
+    /**
+     * @methodsName: removeManager
+     * @description: remove the manager from the team
+     * @return: void
+     */
     public void removeManager(String name){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -39,6 +49,11 @@ public class ManagerService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: getManagerNubmer
+     * @description: count the number of managers in this team
+     * @return: int
+     */
     public static int getManagerNubmer(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

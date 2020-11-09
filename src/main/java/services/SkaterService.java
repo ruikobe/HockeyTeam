@@ -18,6 +18,11 @@ public class SkaterService {
     private static List<Skater> allSkaters = new ArrayList<>();
     private static List<Skater> activeSkaters = new ArrayList<>();
 
+    /**
+     * @methodsName: addSkater
+     * @description: add a skater to the team, and return the name of the new skater
+     * @return: String
+     */
     public String addSkater(Skater newSkater){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -29,6 +34,11 @@ public class SkaterService {
         return newSkater.getName();
     }
 
+    /**
+     * @methodsName: findSkaterWithMostGoals
+     * @description: find the skater with most goads, and return the skater
+     * @return: Skater
+     */
     public Skater findSkaterWithMostGoals(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -37,6 +47,11 @@ public class SkaterService {
         return foundSkater.get(0);
     }
 
+    /**
+     * @methodsName: findSkaterWithMostGames
+     * @description: find the skater with most game played, and return the skater
+     * @return: Skater
+     */
     public Skater findSkaterWithMostGames(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -45,6 +60,11 @@ public class SkaterService {
         return foundSkater.get(0);
     }
 
+    /**
+     * @methodsName: updatePlayerStatistics
+     * @description: update the statistics of the player with the jersey number "playerNumber"
+     * @return: void
+     */
     public void updatePlayerStatistics(String playerNumber,String status, String position, int newGoals, int newAssists){
 
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
@@ -74,6 +94,11 @@ public class SkaterService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: removePlayer
+     * @description: remove the player with the jersey number "playerNumber"
+     * @return: void
+     */
     public void removePlayer(String playerNumber){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -88,6 +113,11 @@ public class SkaterService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: getAllSkater
+     * @description: count the number of all skaters, including "active" and "injured" skaters
+     * @return: int
+     */
     public static int getAllSkater(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -98,6 +128,11 @@ public class SkaterService {
         return allSkaters.size();
     }
 
+    /**
+     * @methodsName: getActiveSkater
+     * @description: count the number of "active" skaters
+     * @return: int
+     */
     public static int getActiveSkater(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

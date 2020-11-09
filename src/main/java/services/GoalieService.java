@@ -18,6 +18,11 @@ public class GoalieService {
     private static List<Goalie> allGoalies = new ArrayList<>();
     private static List<Goalie> activeGoalies = new ArrayList<>();
 
+    /**
+     * @methodsName: addGoalie
+     * @description: add a goalie to the team, and return the name of the new goalie
+     * @return: String
+     */
     public String addGoalie(Goalie newGoalie){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -29,6 +34,11 @@ public class GoalieService {
         return newGoalie.getName();
     }
 
+    /**
+     * @methodsName: findGoalieWithFewestSaves
+     * @description: find the goalie with fewest saves, and return the goalie
+     * @return: Goalie
+     */
     public Goalie findGoalieWithFewestSaves(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -37,6 +47,11 @@ public class GoalieService {
         return foundGoalie.get(0);
     }
 
+    /**
+     * @methodsName: findGoalieWithMostGames
+     * @description: find the goalie with most game played, and return the goalie
+     * @return: Goalie
+     */
     public Goalie findGoalieWithMostGames(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -45,6 +60,11 @@ public class GoalieService {
         return foundGoalie.get(0);
     }
 
+    /**
+     * @methodsName: updatePlayerStatistics
+     * @description: update the statistics of the player with the jersey number "playerNumber"
+     * @return: void
+     */
     public void updatePlayerStatistics(String playerNumber,String status, int newSaves){
 
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
@@ -69,6 +89,11 @@ public class GoalieService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: removePlayer
+     * @description: remove the player with the jersey number "playerNumber"
+     * @return: void
+     */
     public void removePlayer(String playerNumber){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -83,6 +108,11 @@ public class GoalieService {
         entityManager.getTransaction().commit();
     }
 
+    /**
+     * @methodsName: getAllGoalieNumber
+     * @description: count the number of all goalies, including "active" and "injured" goalies
+     * @return: int
+     */
     public static int getAllGoalieNumber(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -93,6 +123,11 @@ public class GoalieService {
         return allGoalies.size();
     }
 
+    /**
+     * @methodsName: getActiveGoalieNumber
+     * @description: count the number of "active" goalies
+     * @return: int
+     */
     public static int getActiveGoalieNumber(){
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

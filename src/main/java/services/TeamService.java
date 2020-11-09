@@ -8,7 +8,6 @@ package services;
 public class TeamService {
 
     /**
-     * @author ruizhu
      * @methodsName: teamValid
      * @description: Validate/check the team roster is valid
      * @return: void
