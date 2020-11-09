@@ -1,15 +1,14 @@
 package models;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table
 public class PlayerHistory {
     @Id
-    private String playerHistoryId;
+    private int playerHistoryId;
     private String playerNumber;
-    private Date date;
+    private String date;
     private int goals;
     private int assists;
     private int saves;
@@ -17,8 +16,8 @@ public class PlayerHistory {
     public PlayerHistory() {
     }
 
-    public PlayerHistory(String playerHistoryId, String playerNumber, Date date, int goals, int assists, int saves) {
-        this.playerHistoryId = playerHistoryId;
+    public PlayerHistory(int playerHistoryId, String playerNumber, String date, int goals, int assists, int saves) {
+        this.playerHistoryId= playerHistoryId;
         this.playerNumber = playerNumber;
         this.date = date;
         this.goals = goals;
@@ -26,11 +25,11 @@ public class PlayerHistory {
         this.saves = saves;
     }
 
-    public String getPlayerHistoryId() {
+    public int getPlayerHistoryId() {
         return playerHistoryId;
     }
 
-    public void setPlayerHistoryId(String playerHistoryId) {
+    public void setPlayerHistoryId(int playerHistoryId) {
         this.playerHistoryId = playerHistoryId;
     }
 
@@ -42,11 +41,11 @@ public class PlayerHistory {
         this.playerNumber = playerNumber;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

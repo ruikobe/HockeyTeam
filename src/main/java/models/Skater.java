@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  Skater Entity
@@ -20,14 +22,14 @@ public class Skater extends Player{
     private int totalAssists;
     private double goalsPerGame;
     private double assistsPerGame;
-//    @ManyToMany
-//    @JoinTable(name="skater_coach", joinColumns = {@JoinColumn(name="fk_skater")}, inverseJoinColumns = {@JoinColumn(name="fk_coach")})
-//    private Set<Coach> coaches = new HashSet<Coach>();
+
+    @OneToMany(targetEntity = PlayerHistory.class)
+    private List<PlayerHistory> playerHistoryList = new ArrayList<>();
 
     public Skater() {
     }
 
-    public Skater(String playerNumber, String name, int age, String status, String position, int gamesPlayed, int totalGoals, int totalAssists, double goalsPerGame, double assistsPerGame) {
+    public Skater(String playerNumber, String name, int age, String status, String position, int gamesPlayed, int totalGoals, int totalAssists, double goalsPerGame, double assistsPerGame, List<PlayerHistory> playerHistoryList) {
         this.playerNumber = playerNumber;
         this.name = name;
         this.age = age;
@@ -38,6 +40,7 @@ public class Skater extends Player{
         this.totalAssists = totalAssists;
         this.goalsPerGame = goalsPerGame;
         this.assistsPerGame = assistsPerGame;
+        this.playerHistoryList = playerHistoryList;
     }
 
     public String getPlayerNumber() {

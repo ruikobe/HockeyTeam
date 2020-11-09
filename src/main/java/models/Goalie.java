@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  Goalie Entity
@@ -18,6 +20,9 @@ public class Goalie extends Player{
 
     private int totalSaves;
     private double savesPerGame;
+
+    @OneToMany(targetEntity = PlayerHistory.class)
+    private List<PlayerHistory> playerHistoryList = new ArrayList<>();
 
     public Goalie() {
     }

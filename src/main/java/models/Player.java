@@ -10,8 +10,6 @@ public class Player {
     private int age;
     private String status;
     private int gamesPlayed;
-    @OneToMany
-    private List<PlayerHistory> playerHistoryList;
 
     public Player() {
     }
