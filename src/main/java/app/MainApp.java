@@ -24,7 +24,7 @@ public class MainApp {
         EntityManagerFactory entityManagerFactory  = Persistence.createEntityManagerFactory("default");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
-        PlayerHistory playerHistory1 = new PlayerHistory(1,"9","2020-05-11",30,10,0);
+        PlayerHistory playerHistory1 = new PlayerHistory(1,"9",1,"2020-05-11",30,10,0);
         entityManager.persist(playerHistory1);
         entityManager.getTransaction().commit();
 

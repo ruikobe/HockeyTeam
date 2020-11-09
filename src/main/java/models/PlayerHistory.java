@@ -8,6 +8,7 @@ public class PlayerHistory {
     @Id
     private int playerHistoryId;
     private String playerNumber;
+    private int gameNumber;
     private String date;
     private int goals;
     private int assists;
@@ -16,9 +17,10 @@ public class PlayerHistory {
     public PlayerHistory() {
     }
 
-    public PlayerHistory(int playerHistoryId, String playerNumber, String date, int goals, int assists, int saves) {
+    public PlayerHistory(int playerHistoryId, String playerNumber, int gameNumber, String date, int goals, int assists, int saves) {
         this.playerHistoryId= playerHistoryId;
         this.playerNumber = playerNumber;
+        this.gameNumber = gameNumber;
         this.date = date;
         this.goals = goals;
         this.assists = assists;
@@ -39,6 +41,14 @@ public class PlayerHistory {
 
     public void setPlayerNumber(String playerNumber) {
         this.playerNumber = playerNumber;
+    }
+
+    public int getGameNumber() {
+        return gameNumber;
+    }
+
+    public void setGameNumber(int gameNumber) {
+        this.gameNumber = gameNumber;
     }
 
     public String getDate() {
